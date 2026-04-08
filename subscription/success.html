@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psyqui — ¡Suscripción exitosa!</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #5BA88C;
+  --primary-mid: #6FC4A5;
+  --primary-light: #EDF7F2;
+  --primary-dark: #488F74;
+  --accent: #E8945A;
+  --accent-light: #FEF3EA;
+  --bg: #FBF9F5;
+  --surface: #FFFFFF;
+  --text: #2C3E35;
+  --text-secondary: #6A8578;
+  --text-muted: #A5BDB2;
+  --border: #DDE8E2;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', -apple-system, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; -webkit-font-smoothing: antialiased; }
+
+.card {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 48px 36px;
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+}
+
+.logo {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 700;
+  color: var(--text); margin-bottom: 32px;
+}
+.logo svg { border-radius: 8px; }
+
+.check-circle {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--primary-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+}
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.check-circle svg { animation: check 0.4s ease 0.6s both; }
+@keyframes check {
+  0% { stroke-dashoffset: 30; opacity: 0; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 26px; font-weight: 700;
+  margin-bottom: 8px;
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+
+.subtitle {
+  font-size: 15px; color: var(--text-secondary);
+  margin-bottom: 28px; line-height: 1.5;
+  animation: fadeUp 0.5s ease 0.4s both;
+}
+
+@keyframes fadeUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.plan-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 16px; border-radius: 12px;
+  background: var(--primary-light); color: var(--primary);
+  font-size: 14px; font-weight: 600;
+  margin-bottom: 28px;
+  animation: fadeUp 0.5s ease 0.45s both;
+}
+
+.redirect-notice {
+  font-size: 13px; color: var(--text-muted);
+  margin-bottom: 20px;
+  animation: fadeUp 0.5s ease 0.5s both;
+}
+.redirect-notice .countdown {
+  font-weight: 600; color: var(--primary);
+}
+
+.btn-open {
+  display: block; width: 100%;
+  padding: 16px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+  color: #fff; font-size: 16px; font-weight: 600;
+  border: none; cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 4px 16px rgba(91,168,140,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  animation: fadeUp 0.5s ease 0.55s both;
+}
+.btn-open:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(91,168,140,0.3); }
+
+.store-links {
+  display: flex; gap: 10px; justify-content: center;
+  margin-top: 16px;
+  animation: fadeUp 0.5s ease 0.6s both;
+}
+.store-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 18px; border-radius: 12px;
+  background: #1A1A1A; color: #fff;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.store-link:hover { opacity: 0.85; }
+
+.divider {
+  height: 1px; background: var(--border);
+  margin: 24px 0;
+  animation: fadeUp 0.5s ease 0.55s both;
+}
+
+.help {
+  font-size: 12px; color: var(--text-muted);
+  margin-top: 20px;
+  animation: fadeUp 0.5s ease 0.65s both;
+}
+.help a { color: var(--primary); }
+
+.confetti {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 10; overflow: hidden;
+}
+.confetti-piece {
+  position: absolute; width: 8px; height: 8px;
+  border-radius: 2px; top: -10px;
+  animation: confettiFall linear forwards;
+}
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="confetti" id="confetti"></div>
+
+<div class="card">
+  <div class="logo">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+      <rect width="100" height="100" rx="20" fill="#F5EDE0"/>
+      <ellipse cx="35" cy="55" rx="30" ry="35" fill="#7A9E82"/>
+      <ellipse cx="65" cy="45" rx="30" ry="35" fill="#E8A56B"/>
+      <ellipse cx="50" cy="50" rx="8" ry="20" fill="#F5EDE0" transform="rotate(-20 50 50)"/>
+    </svg>
+    Psyqui
+  </div>
+
+  <div class="check-circle">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#5BA88C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:30">
+      <path d="M20 6L9 17l-5-5"/>
+    </svg>
+  </div>
+
+  <h1>¡Listo! Ya eres parte de Psyqui</h1>
+  <p class="subtitle">Tu suscripción se activó correctamente. Ahora tienes acceso completo a tu plan.</p>
+
+  <div class="plan-badge" id="planBadge">
+    Cargando plan...
+  </div>
+
+  <p class="redirect-notice">
+    Abriendo la app en <span class="countdown" id="countdown">5</span> segundos...
+  </p>
+
+  <a href="psyquiapp://" class="btn-open" id="openApp">Abrir Psyqui</a>
+
+  <div class="divider"></div>
+
+  <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;animation:fadeUp 0.5s ease 0.58s both;">¿No tienes la app instalada?</p>
+
+  <div class="store-links">
+    <a href="https://apps.apple.com/app/psyqui" class="store-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      App Store
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.psyqui" class="store-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M3.18 23.73c.14.06.29.1.45.1.17 0 .35-.04.51-.13l8.07-4.53-2.92-2.54-6.11 5.35c-.23.2-.23.55 0 .75zM1.57 2.15c-.1.17-.16.37-.16.59v18.52c0 .22.06.42.16.59l8.42-9.85-8.42-9.85zM20.42 10.66l-3.14-1.76-3.31 2.89 3.07 2.67 3.38-1.9c.62-.35.62-1.55 0-1.9zM5.94 2.26L17 8.46l-3.22 2.82L5.13 1.89c.25-.04.53.03.81.37z"/></svg>
+      Google Play
+    </a>
+  </div>
+
+  <p class="help">
+    ¿Problemas? Escríbenos a <a href="mailto:soporte@psyqui.app">soporte@psyqui.app</a>
+  </p>
+</div>
+
+<script>
+  // ─── Parse plan from URL params ───
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get('plan') || 'base';
+  const planNames = { base: 'Plan Base · $149/mes', pro: 'Plan Pro · $249/mes' };
+  document.getElementById('planBadge').textContent = planNames[plan] || planNames.base;
+
+  // ─── Countdown + auto redirect to deep link ───
+  let seconds = 5;
+  const countdownEl = document.getElementById('countdown');
+  const deepLink = 'psyquiapp://subscription/success?plan=' + plan;
+
+  const timer = setInterval(() => {
+    seconds--;
+    countdownEl.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(timer);
+      window.location.href = deepLink;
+    }
+  }, 1000);
+
+  // ─── Manual open button ───
+  document.getElementById('openApp').href = deepLink;
+
+  // ─── Detect platform for smart redirect fallback ───
+  function detectPlatform() {
+    const ua = navigator.userAgent || navigator.vendor;
+    if (/iPad|iPhone|iPod/.test(ua)) return 'ios';
+    if (/android/i.test(ua)) return 'android';
+    return 'desktop';
+  }
+
+  // If deep link fails after timeout, redirect to store
+  setTimeout(() => {
+    const platform = detectPlatform();
+    if (platform === 'ios') {
+      // If still on page, app didn't open — go to App Store
+      window.location.href = 'https://apps.apple.com/app/psyqui';
+    } else if (platform === 'android') {
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.psyqui';
+    }
+  }, 7000);
+
+  // ─── Confetti ───
+  const confettiContainer = document.getElementById('confetti');
+  const colors = ['#5BA88C', '#6FC4A5', '#E8945A', '#F0B088', '#EDF7F2', '#FEF3EA'];
+  for (let i = 0; i < 40; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + '%';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+    piece.style.animationDelay = Math.random() * 1.5 + 's';
+    piece.style.width = (Math.random() * 6 + 4) + 'px';
+    piece.style.height = (Math.random() * 6 + 4) + 'px';
+    confettiContainer.appendChild(piece);
+  }
+</script>
+
+</body>
+</html>
