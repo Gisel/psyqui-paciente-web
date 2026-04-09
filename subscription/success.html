@@ -216,7 +216,9 @@ h1 {
   // ─── Countdown + auto redirect to deep link ───
   let seconds = 5;
   const countdownEl = document.getElementById('countdown');
-  const deepLink = 'psyquiapp://subscription/success?plan=' + plan;
+  const deepLink = 'psyquiapp://(tabs)/chat'; 
+  
+  psyquiapp://(tabs)/chat
 
   const timer = setInterval(() => {
     seconds--;
